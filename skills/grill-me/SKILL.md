@@ -40,6 +40,7 @@ Example:
 - One question at a time. Lists of questions let the user skip the hard ones.
 - Questions get harder as the session goes on — start broad, narrow toward the thing the user is least certain about.
 - If the user's answer reveals a contradiction or a gap, name it as a question: "You said X earlier and just said Y — which is the one you are more confident in?"
+- If an answer is vague or evasive, do not move on. Reframe: "Let me ask that differently..." — stay on the same branch until it resolves.
 
 ## The prompt to use directly
 

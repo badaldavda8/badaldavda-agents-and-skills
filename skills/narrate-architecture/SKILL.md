@@ -37,6 +37,10 @@ Example:
    - Where does it end, and how does the caller know it succeeded?
 4. At every decision point, AI names: what happens in the happy path, and what happens when it does not
 
+## Multi-service systems
+
+If the system has more than five services: pick the single most common request path and narrate that first. For failure modes, ask the user which to explore — timeout, full queue, auth failure, cascade — rather than narrating all.
+
 ## The prompt to use directly
 
 > "Walk me through this architecture flow by flow, like you are narrating what happens to a single request from the moment it arrives. Tell me every decision point, every handoff, every place something could go wrong."

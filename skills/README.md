@@ -31,7 +31,23 @@ Each skill lives in its own folder with up to three files:
 | Skill | Description | Invoke |
 |---|---|---|
 | [`grill-me`](grill-me/) | Break the yes-person dynamic. AI asks questions, you answer, until every assumption is on the table. Credit: inspired by Andrej Karpathy. | `/grill-me` |
-| [`debug-deep`](debug-deep/) | Break out of a troubleshooting loop with a structured search order: code first, then official docs, then Reddit, then AWS re:Post — before any suggestion. | `/debug-deep` |
+| [`debug-deep`](debug-deep/) | Break out of a troubleshooting loop with a structured search order: code first, then official docs, then community forums — before any suggestion. | `/debug-deep` |
+
+
+### Presenting
+
+| Skill | Description | Invoke |
+|---|---|---|
+| [`talk-script`](talk-script/) | Read docs and produce a professional talk script written as a story. One spine, one idea the audience leaves with, earned through narrative not summary. | `/talk-script` |
+| [`docs-to-marp`](docs-to-marp/) | Read docs and produce a Marp presentation — slides in Markdown, exportable to PDF or HTML, living in version control. | `/docs-to-marp` |
+| [`starter-guide`](starter-guide/) | Read docs and produce the guide a new person actually needs — mental model first, day-one tasks concrete, pointers to deeper material at every step. | `/starter-guide` |
+
+### Reviewing
+
+| Skill | Description | Invoke |
+|---|---|---|
+| [`doc-review`](doc-review/) | Critical editorial review — purpose, structure, clarity, accuracy, voice. One specific fix per weakness. Not grammar check. | `/doc-review` |
+| [`skill-review`](skill-review/) | Review SKILL.md files for YAML correctness, trigger quality, ambiguity, length, and cross-skill coherence. | `/skill-review` |
 
 ---
 
@@ -53,7 +69,7 @@ Then in Claude Code, invoke any skill:
 /storyteller
 /explain-like-a-story distributed consensus
 /grill-me my migration plan
-/debug-deep Lambda timeout after Node 20 upgrade
+/debug-deep Node 20 upgrade broke cold start times
 /narrate-architecture the order service
 /customer-story Stripe
 ```

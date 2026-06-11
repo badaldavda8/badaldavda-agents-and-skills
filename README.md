@@ -30,7 +30,7 @@ Then invoke any skill in Claude Code:
 /storyteller
 /explain-like-a-story distributed consensus
 /grill-me my migration plan
-/debug-deep Lambda timeout after Node 20 upgrade
+/debug-deep Node 20 upgrade broke cold start times
 /narrate-architecture the order service
 /customer-story Stripe
 ```
@@ -58,7 +58,22 @@ Then invoke any skill in Claude Code:
 | Skill | What it does | Invoke |
 |---|---|---|
 | [`grill-me`](skills/grill-me/) | Break the yes-person dynamic. AI asks questions, you answer, until every assumption is on the table. Credit: inspired by Andrej Karpathy. | `/grill-me` |
-| [`debug-deep`](skills/debug-deep/) | Break out of a troubleshooting loop with a structured search order: code first, then official docs, then Reddit, then AWS re:Post — before any suggestion. | `/debug-deep` |
+| [`debug-deep`](skills/debug-deep/) | Break out of a troubleshooting loop with a structured search order: code first, then official docs, then community forums — before any suggestion. | `/debug-deep` |
+
+### Presenting
+
+| Skill | What it does | Invoke |
+|---|---|---|
+| [`talk-script`](skills/talk-script/) | Read docs and produce a professional talk script written as a story — one spine, professional delivery, told like a narrative not a bullet list. | `/talk-script` |
+| [`docs-to-ppt`](skills/docs-to-ppt/) | Read docs and produce a presentation — Marp (Markdown) for fast internal slides, HTML for high-stakes visual presentations. Format follows purpose. | `/docs-to-ppt` |
+| [`starter-guide`](skills/starter-guide/) | Read docs and produce the onboarding guide a new person actually needs — mental model first, day-one tasks concrete, pointers to deeper material at every step. | `/starter-guide` |
+
+### Reviewing
+
+| Skill | What it does | Invoke |
+|---|---|---|
+| [`doc-review`](skills/doc-review/) | Critical review of any document — essay, technical doc, onboarding guide, talk script. Purpose, structure, clarity, accuracy, voice. What is not working and one specific fix per issue. | `/doc-review` |
+| [`skill-review`](skills/skill-review/) | Review Claude SKILL.md files for correctness and invocability. Checks YAML structure, description trigger quality, ambiguity, length, and cross-skill gaps. | `/skill-review` |
 
 ---
 
@@ -105,6 +120,21 @@ Skills I am building:
 - `/deep-work-review` — reviewing AI-generated work the way an editor would, not a rubber stamp
 - `/assumption-audit` — surface every assumption in an AI conversation before they compound
 - `/weekly-brief` — the scheduled agent that writes my weekly status report (open-sourcing the prompt and structure)
+
+### Presenting
+
+| Skill | What it does | Invoke |
+|---|---|---|
+| [`talk-script`](skills/talk-script/) | Read docs and produce a professional talk script written as a story — one spine, professional delivery, told like a narrative not a bullet list. | `/talk-script` |
+| [`docs-to-ppt`](skills/docs-to-ppt/) | Read docs and produce a presentation — Marp (Markdown) for fast internal slides, HTML for high-stakes visual presentations. Format follows purpose. | `/docs-to-ppt` |
+| [`starter-guide`](skills/starter-guide/) | Read docs and produce the onboarding guide a new person actually needs — mental model first, day-one tasks concrete, pointers to deeper material at every step. | `/starter-guide` |
+
+### Reviewing
+
+| Skill | What it does | Invoke |
+|---|---|---|
+| [`doc-review`](skills/doc-review/) | Critical review of any document — essay, technical doc, onboarding guide, talk script. Purpose, structure, clarity, accuracy, voice. What is not working and one specific fix per issue. | `/doc-review` |
+| [`skill-review`](skills/skill-review/) | Review Claude SKILL.md files for correctness and invocability. Checks YAML structure, description trigger quality, ambiguity, length, and cross-skill gaps. | `/skill-review` |
 
 ---
 

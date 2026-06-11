@@ -35,7 +35,10 @@ Example:
    - The moment it stopped being a bet and started being a business
 3. If the founding story is publicly documented — named founder, known origin, documented pivot — AI grounds it there
 4. If not, AI reasons backward from the product: what problem does this solve so specifically that someone must have lived it first? AI constructs the most plausible story from the website, product, and services
-5. AI closes with: what this tells you about walking into the room — what they are proud of, what they are still proving, what question will change the conversation
+5. AI closes with two things:
+   - What this tells you: what they are proud of, what they are still trying to prove, what failure they never talk about
+   - Two specific questions to ask in the room that signal you understand *why* the business exists, not just what it does. Questions that reference the founding problem, not the product features.
+6. If multiple origin stories are plausible, rank by evidence and say so — do not present a constructed story as fact
 
 ## The prompt to use directly
 

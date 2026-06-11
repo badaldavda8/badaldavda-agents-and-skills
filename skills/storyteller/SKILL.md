@@ -1,3 +1,8 @@
+---
+name: storyteller
+description: Turn lived experience into a structured personal essay with honest voice, research, and a fable. Use when you have a story to tell — a lesson from a failure, a habit that solved a new problem, a moment that changed how you work. Not when you want to summarise an idea.
+---
+
 # `/storyteller` — A Claude Skill for Writing Personal Essays
 
 *A skill for turning lived experience into structured, honest, personal essays — with a fable at the start, research at the end, and your real voice in between.*

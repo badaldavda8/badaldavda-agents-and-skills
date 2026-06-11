@@ -1,10 +1,40 @@
 # Badal's Agents and Skills
 
-> Skills and essays for working with AI intentionally — not just efficiently.
+> An attempt to share the way I prompt — using the skills framework.
 
-I am a Senior Delivery Consultant at AWS ProServe. I have been building around myself with agents and skills for two years. This repo is where I publish what I have learned — as skills you can install, and essays that explain the thinking behind them.
+---
 
-The skills are practical. The essays are personal. Both are about the same thing: staying genuinely engaged when AI is doing the work, rather than watching from the treeline.
+## Who this is for
+
+Anyone who has been using AI long enough to notice that the quality of your output is mostly a function of how you set up the context — not how smart the model is.
+
+---
+
+## My journey to here
+
+I started with **prompt engineering**. Writing clever prompts, chaining outputs, trying to get consistent results through wording alone. That still matters, but thinking models have absorbed a lot of that burden. You do not need to tell a 2026 model to think step by step.
+
+Then I got into **context engineering** — working with Kiro, figuring out how to give an AI model the right persona and background with as few tokens as possible. Less is more. A dense, well-structured context window beats a long rambling one every time.
+
+Then came **Kiro's steering docs and hooks**. A structured way to describe how you work, what you care about, and what you want the agent to do automatically at the edges of a session. Same idea as context engineering, but persistent and composable.
+
+Now I am here — **Claude's skills framework**. Reusable, invokable prompts that ask you questions before they do anything, carry a process, and produce consistent output across sessions. It is context population I was doing manually before, but in a more structured, shareable form.
+
+Each step was the same move: taking something I was doing by hand and making it explicit enough that an AI could follow it reliably.
+
+---
+
+## Tomorrow this might not matter either
+
+Anthropic's engineering team published a piece on [harness design for long-running applications](https://www.anthropic.com/engineering/harness-design-long-running-apps) that points at where this is going.
+
+A harness is the orchestration layer around a model — the structure of agents, context, tools, and feedback loops that scaffolds what the model cannot yet do alone. They built one with a planner, a generator, and an evaluator. The planner consumed a skills document to embed visual standards into specs. The evaluator negotiated contracts and caught gaps. The whole thing outperformed a single agent dramatically on complex, long-running tasks.
+
+The interesting line is this: better models reduce scaffolding needs. Opus 4.6 eliminated decomposition steps that 4.5 required. The harness got lighter as the model got better.
+
+Which means the skills framework — this repo — is probably a transitional layer. Not permanent infrastructure. A way of making tacit knowledge explicit enough to survive a context switch, until models are good enough that the knowledge does not need to be stated at all.
+
+That is fine. I would rather publish what I know now than wait for the version that does not need it.
 
 ---
 
@@ -13,10 +43,7 @@ The skills are practical. The essays are personal. Both are about the same thing
 ### Claude Code
 
 ```bash
-# Clone the repo
 git clone https://github.com/badaldavda8/badaldavda-agents-and-skills.git
-
-# Install all skills at once
 cd badaldavda-agents-and-skills
 for skill in skills/*/SKILL.md; do
   name=$(basename $(dirname "$skill"))
@@ -24,7 +51,19 @@ for skill in skills/*/SKILL.md; do
 done
 ```
 
-Then invoke any skill in Claude Code:
+### Kiro
+
+```bash
+git clone https://github.com/badaldavda8/badaldavda-agents-and-skills.git
+cd badaldavda-agents-and-skills
+for skill in skills/*/SKILL.md; do
+  name=$(basename $(dirname "$skill"))
+  mkdir -p ~/.kiro/skills/${name}
+  cp "$skill" ~/.kiro/skills/${name}/SKILL.md
+done
+```
+
+Then invoke in Claude Code or Kiro:
 
 ```
 /storyteller
@@ -64,22 +103,20 @@ Then invoke any skill in Claude Code:
 
 | Skill | What it does | Invoke |
 |---|---|---|
-| [`talk-script`](skills/talk-script/) | Read docs and produce a professional talk script written as a story — one spine, professional delivery, told like a narrative not a bullet list. | `/talk-script` |
-| [`docs-to-ppt`](skills/docs-to-ppt/) | Read docs and produce a presentation — Marp (Markdown) for fast internal slides, HTML for high-stakes visual presentations. Format follows purpose. | `/docs-to-ppt` |
-| [`starter-guide`](skills/starter-guide/) | Read docs and produce the onboarding guide a new person actually needs — mental model first, day-one tasks concrete, pointers to deeper material at every step. | `/starter-guide` |
+| [`talk-script`](skills/talk-script/) | Read docs and produce a professional talk script written as a story — one spine, told like a narrative not a bullet list. | `/talk-script` |
+| [`docs-to-ppt`](skills/docs-to-ppt/) | Read docs and produce a presentation — Marp for fast internal slides, HTML for high-stakes visual presentations with Mermaid diagrams. | `/docs-to-ppt` |
+| [`starter-guide`](skills/starter-guide/) | Read docs and produce the onboarding guide a new person actually needs — mental model first, day-one tasks concrete. | `/starter-guide` |
 
 ### Reviewing
 
 | Skill | What it does | Invoke |
 |---|---|---|
-| [`doc-review`](skills/doc-review/) | Critical review of any document — essay, technical doc, onboarding guide, talk script. Purpose, structure, clarity, accuracy, voice. What is not working and one specific fix per issue. | `/doc-review` |
-| [`skill-review`](skills/skill-review/) | Review Claude SKILL.md files for correctness and invocability. Checks YAML structure, description trigger quality, ambiguity, length, and cross-skill gaps. | `/skill-review` |
+| [`doc-review`](skills/doc-review/) | Critical review of any document. Purpose, structure, clarity, accuracy, voice. What is not working and one specific fix per issue. | `/doc-review` |
+| [`skill-review`](skills/skill-review/) | Audit SKILL.md files for correctness and invocability. Checks YAML structure, description trigger quality, ambiguity, length, cross-skill gaps. | `/skill-review` |
 
 ---
 
 ## Essays
-
-Essays built using these skills. Each one links back to the skill that helped write it.
 
 | Essay | What it's about | Skill used |
 |---|---|---|
@@ -87,58 +124,14 @@ Essays built using these skills. Each one links back to the skill that helped wr
 
 ---
 
-## How the Skills Work
-
-Each skill is a structured conversation, not a magic prompt. It asks you questions before it does anything. It interviews you, pushes for specifics, finds the thing you are most reluctant to say, and only then builds.
-
-The anatomy of every skill:
-
-- **What it does** — one clear statement of purpose
-- **Opening interview** — questions the skill asks before starting
-- **The process** — step-by-step, with the reasoning behind each step
-- **Voice principles** — what makes the output sound like you, not like AI
-- **Closing conventions** — the things that appear in every finished piece
-
-The goal is not to replace your thinking. It is to make your thinking visible so you can push back on it.
-
----
-
-## The Philosophy
-
-I started building skills the same way I started taking notes during IIT prep — not because someone told me to, but because doing nothing while something else worked felt like the opposite of learning.
-
-The problem with AI is that it is very agreeable. It validates your assumptions, carries your bad premises forward, and produces beautiful output that reads like understanding. Note-taking — and its AI equivalent, asking AI to build a mind map of its own reasoning — is how I stay in the conversation rather than just receiving it.
-
-That is what these skills are built on. Not productivity. Presence.
-
----
-
 ## What's Next
 
 Skills I am building:
 
-- `/deep-work-review` — reviewing AI-generated work the way an editor would, not a rubber stamp
 - `/assumption-audit` — surface every assumption in an AI conversation before they compound
-- `/weekly-brief` — the scheduled agent that writes my weekly status report (open-sourcing the prompt and structure)
+- `/weekly-brief` — the scheduled agent that writes my weekly status report
 
-### Presenting
-
-| Skill | What it does | Invoke |
-|---|---|---|
-| [`talk-script`](skills/talk-script/) | Read docs and produce a professional talk script written as a story — one spine, professional delivery, told like a narrative not a bullet list. | `/talk-script` |
-| [`docs-to-ppt`](skills/docs-to-ppt/) | Read docs and produce a presentation — Marp (Markdown) for fast internal slides, HTML for high-stakes visual presentations. Format follows purpose. | `/docs-to-ppt` |
-| [`starter-guide`](skills/starter-guide/) | Read docs and produce the onboarding guide a new person actually needs — mental model first, day-one tasks concrete, pointers to deeper material at every step. | `/starter-guide` |
-
-### Reviewing
-
-| Skill | What it does | Invoke |
-|---|---|---|
-| [`doc-review`](skills/doc-review/) | Critical review of any document — essay, technical doc, onboarding guide, talk script. Purpose, structure, clarity, accuracy, voice. What is not working and one specific fix per issue. | `/doc-review` |
-| [`skill-review`](skills/skill-review/) | Review Claude SKILL.md files for correctness and invocability. Checks YAML structure, description trigger quality, ambiguity, length, and cross-skill gaps. | `/skill-review` |
-
----
-
-## Essays in Progress
+Essays in progress:
 
 - *How I learned to build these skills* — the note-taking habit that turned out to be the most useful thing I brought into the age of AI
 - *The Kamadhenu Question* — on agents, intensity, and what you actually ask for when something gives everything
@@ -149,9 +142,9 @@ Skills I am building:
 
 Badal Davda — Senior Delivery Consultant, AWS ProServe.
 
-[LinkedIn](https://www.linkedin.com/in/badaldavda/) · [Medium](https://medium.com/@badaldavda)
+[LinkedIn](https://www.linkedin.com/in/badaldavda/) · [Medium](https://medium.com/@badaldavda8)
 
-*These are personal projects and personal opinions. Not AWS or Amazon positions.*
+*Personal projects and personal opinions. Not AWS or Amazon positions.*
 
 ---
 

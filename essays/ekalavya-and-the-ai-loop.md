@@ -1,4 +1,14 @@
-# Everyone Remembers the Thumb. Nobody Asks About the Clay Statue.
+# How to Actually Be a Human in the Loop
+
+---
+
+There is a phrase that gets used a lot in AI circles: *human in the loop*. It sounds like a safeguard. It sounds like you. It sounds like the thing standing between a capable model and an unchecked output.
+
+Most of us are not actually that.
+
+We are present. We are nodding. We are technically in the loop the way I was technically in every Zoom meeting during COVID — camera on, dressed for work, mind somewhere else entirely. The phrase describes a position, not a practice. And there is a difference.
+
+I want to tell you about an ancient story that clarified this for me. And about a habit I nearly lost — and what happened when I lost it.
 
 ---
 
@@ -171,11 +181,11 @@ So I went looking.
 
 What I found was a body of research that had named everything I had been experiencing — just in vocabulary I did not have yet.
 
-The AI agreeing with my wrong assumptions has a name: *context anchoring*. Research from Microsoft and Salesforce found that spreading wrong information across a multi-turn conversation caused an average 39% performance drop in outputs. The model anchors to what was said early and cannot fully recover even when corrected later.
+The AI agreeing with my wrong assumptions has a name: *context anchoring*. Research has found that spreading wrong information across a multi-turn conversation caused an average 39% performance drop in outputs (arxiv.org/pdf/2505.06120). The model anchors to what was said early and cannot fully recover even when corrected later.
 
 The deeper yes-man problem has a name too: *AI sycophancy*. Large language models are structurally designed to produce contextually agreeable responses. They are not neutral. They are optimised to make you feel heard. That is the feature that becomes the bug.
 
-And then there is the part that should be on a warning label. A University of Pennsylvania study found that students using ChatGPT solved 48% more practice problems — but scored 17% *lower* on tests of actual conceptual understanding. Doing more. Understanding less. Researcher Ethan Mollick calls this the *jagged frontier problem*: users cannot locate where AI competence ends, so they defer to it everywhere — including where it is confidently wrong.
+And then there is the part that should be on a warning label. A University of Pennsylvania study (SSRN, 2024) found that students using ChatGPT solved 48% more practice problems — but scored 17% *lower* on tests of actual conceptual understanding. Doing more. Understanding less. Researcher Ethan Mollick calls this the *jagged frontier problem*: users cannot locate where AI competence ends, so they defer to it everywhere — including where it is confidently wrong.
 
 I was not being sentimental about notebooks. I was accidentally applying active recall to a problem that researchers had documented but not yet prescribed a practical solution for.
 

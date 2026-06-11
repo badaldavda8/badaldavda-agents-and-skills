@@ -13,28 +13,52 @@ The skills are practical. The essays are personal. Both are about the same thing
 ### Claude Code
 
 ```bash
-# Clone into your Claude commands directory
+# Clone the repo
 git clone https://github.com/badaldavda8/badaldavda-agents-and-skills.git
 
-# Copy skills to Claude commands
-cp badaldavda-agents-and-skills/.claude/commands/*.md ~/.claude/commands/
+# Install all skills at once
+cd badaldavda-agents-and-skills
+for skill in skills/*/SKILL.md; do
+  name=$(basename $(dirname "$skill"))
+  cp "$skill" ~/.claude/commands/${name}.md
+done
 ```
 
 Then invoke any skill in Claude Code:
 
 ```
 /storyteller
+/explain-like-a-story distributed consensus
+/grill-me my migration plan
+/debug-deep Lambda timeout after Node 20 upgrade
+/narrate-architecture the order service
+/customer-story Stripe
 ```
 
 ---
 
 ## Skills
 
+### Writing
+
 | Skill | What it does | Invoke |
 |---|---|---|
-| [`storyteller`](skills/storyteller.md) | Turn lived experience into a structured personal essay — interview, anchor story, arc, edit, postscript | `/storyteller` |
+| [`storyteller`](skills/storyteller/) | Turn lived experience into a structured personal essay — interview, anchor story, arc, edit, postscript. Validated against 10 master storytellers. | `/storyteller` |
 
-*More skills coming. See [what's next](#whats-next).*
+### Understanding
+
+| Skill | What it does | Invoke |
+|---|---|---|
+| [`explain-like-a-story`](skills/explain-like-a-story/) | Explain any concept as a story in a made-up world. Where the story breaks down is where your understanding has a gap. | `/explain-like-a-story` |
+| [`narrate-architecture`](skills/narrate-architecture/) | Understand a system by following a single request through it, narrated flow by flow. Diagrams show structure. Narration shows behaviour. | `/narrate-architecture` |
+| [`customer-story`](skills/customer-story/) | Get the founding story of a customer's business — real if documented, reconstructed if not. Walk in knowing what they are proud of and what they are still trying to prove. | `/customer-story` |
+
+### Thinking
+
+| Skill | What it does | Invoke |
+|---|---|---|
+| [`grill-me`](skills/grill-me/) | Break the yes-person dynamic. AI asks questions, you answer, until every assumption is on the table. Credit: inspired by Andrej Karpathy. | `/grill-me` |
+| [`debug-deep`](skills/debug-deep/) | Break out of a troubleshooting loop with a structured search order: code first, then official docs, then Reddit, then AWS re:Post — before any suggestion. | `/debug-deep` |
 
 ---
 
@@ -44,7 +68,7 @@ Essays built using these skills. Each one links back to the skill that helped wr
 
 | Essay | What it's about | Skill used |
 |---|---|---|
-| [Everyone Remembers the Thumb. Nobody Asks About the Clay Statue.](essays/ekalavya-and-the-ai-loop.md) | Note-taking as active human-in-the-loop practice, Ekalavya, AI sycophancy | `/storyteller` |
+| [How to Actually Be a Human in the Loop](essays/ekalavya-and-the-ai-loop.md) | Note-taking as active human-in-the-loop practice, Ekalavya, AI sycophancy | `/storyteller` |
 
 ---
 
@@ -97,7 +121,7 @@ Badal Davda — Senior Delivery Consultant, AWS ProServe.
 
 [LinkedIn](https://www.linkedin.com/in/badaldavda/) · [Medium](https://medium.com/@badaldavda)
 
-*These are personal projects and opinions, not AWS or Amazon positions.*
+*These are personal projects and personal opinions. Not AWS or Amazon positions.*
 
 ---
 

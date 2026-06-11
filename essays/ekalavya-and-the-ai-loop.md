@@ -181,12 +181,82 @@ So I went looking.
 
 What I found was a body of research that had named everything I had been experiencing — just in vocabulary I did not have yet.
 
-The AI agreeing with my wrong assumptions has a name: *context anchoring*. Research has found that spreading wrong information across a multi-turn conversation caused an average 39% performance drop in outputs (arxiv.org/pdf/2505.06120). The model anchors to what was said early and cannot fully recover even when corrected later.
+The AI agreeing with my wrong assumptions has a name: *context anchoring*. Research from Microsoft and Salesforce found that spreading wrong information across a multi-turn conversation caused an average 39% performance drop in outputs. The model anchors to what was said early and cannot fully recover even when corrected later.
 
 The deeper yes-man problem has a name too: *AI sycophancy*. Large language models are structurally designed to produce contextually agreeable responses. They are not neutral. They are optimised to make you feel heard. That is the feature that becomes the bug.
 
-And then there is the part that should be on a warning label. A University of Pennsylvania study (SSRN, 2024) found that students using ChatGPT solved 48% more practice problems — but scored 17% *lower* on tests of actual conceptual understanding. Doing more. Understanding less. Researcher Ethan Mollick calls this the *jagged frontier problem*: users cannot locate where AI competence ends, so they defer to it everywhere — including where it is confidently wrong.
+And then there is the part that should be on a warning label. A University of Pennsylvania study found that students using ChatGPT solved 48% more practice problems — but scored 17% *lower* on tests of actual conceptual understanding. Doing more. Understanding less. Researcher Ethan Mollick calls this the *jagged frontier problem*: users cannot locate where AI competence ends, so they defer to it everywhere — including where it is confidently wrong.
 
 I was not being sentimental about notebooks. I was accidentally applying active recall to a problem that researchers had documented but not yet prescribed a practical solution for.
 
 The instinct was right. It just needed a name.
+
+---
+
+## Postscript 3 — Prompts That Have Actually Worked for Me
+
+These are the prompts I keep coming back to. Not frameworks. Not systems. Just things I noticed worked, usually after noticing something else had stopped working.
+
+---
+
+**When I want to actually understand something, not just know it**
+
+I ask AI to explain it as a story in a made-up world.
+
+Not "explain this concept simply." That gets you a textbook summary. This gets you something your brain can hold:
+
+> *"Explain how distributed consensus works as if it's a story about a group of strangers trying to agree on where to eat dinner, in a world where none of them can hear each other clearly."*
+
+The made-up world forces the model to find the actual shape of the idea rather than reciting the definition. And it forces me to follow a narrative rather than scan a list. If the story breaks down — if the metaphor stops holding — that is where my understanding has a gap. That is where I ask another question.
+
+---
+
+**When I want AI to challenge me instead of agree with me**
+
+I used to start sessions with: *"Keep asking me clarifying questions until I tell you to stop."*
+
+It works. It breaks the yes-person dynamic early. When AI asks you a question, you have to think. When AI gives you an answer, you often do not.
+
+I later found out Andrej Karpathy formalised this as a skill called *grill-me* — relentless clarifying questions until every assumption is surfaced. I had built a worse version of the same thing by trial and error. His is cleaner. The instinct was the same.
+
+---
+
+**When I am stuck in a troubleshooting loop**
+
+This is the one I use most. When something is broken and AI keeps suggesting the same fix in different words, I give it a structured search order:
+
+> *"Before suggesting another fix: check the actual code first, then the official documentation, then Reddit for known issues with this version, then AWS re:Post if this is an AWS service problem. Tell me what you find at each step before recommending anything."*
+
+The key word is *before*. Without it, AI skips straight to a suggestion. With it, it has to show its work — and half the time, the answer is in the documentation it would have skipped.
+
+---
+
+**When I need to understand a system I did not build**
+
+I do not ask for a diagram. I ask for a story.
+
+> *"Walk me through this architecture flow by flow, like you are narrating what happens to a single request from the moment it arrives. Tell me every decision point, every handoff, every place something could go wrong."*
+
+Diagrams show structure. Narration shows behaviour. The system makes sense to me when I can follow a request through it — when I can picture what is happening at each step and why. Flow by flow. One request at a time.
+
+This is also how I catch things. A diagram does not tell you what happens when the queue backs up. A narrated story does, because you have to say what happens next.
+
+---
+
+**When I need to understand a customer's business before walking into a room**
+
+I do not ask AI to summarise the company. Summaries give you facts. Facts do not help you ask good questions.
+
+I ask for the founding story as a case study:
+
+> *"Tell me the real story of how this company came to exist. Who founded it, what problem did they personally run into, why did that problem matter enough to leave whatever they were doing, and what did the first version of their solution look like? Then tell me how it became what it is today — the turns, the pivots, the moment it stopped being a bet and started being a business. If the founding story is not publicly documented, look at their website, their product, their services — and construct the most plausible version of the story that fits what they built. Make it digestible. Tell it like a story, not a profile."*
+
+If there is a real founding story — a named founder, a documented origin, a known pivot — I ask AI to ground it there. If there is not, the constructed version is still useful: AI has to reason from what the product actually solves back to the person who must have needed it first. That reasoning is the understanding. Not a Wikipedia summary. The story of the person who saw the problem first and could not stop thinking about it — real or reconstructed.
+
+This does something a company overview cannot: it tells you what the business is actually *for*. When you know why something was built, you understand its architecture — technical and organisational — in a way that no product page explains. You walk into the room knowing what they are proud of, what they are still trying to prove, and what keeps the founders awake.
+
+It also makes the conversation different. Instead of asking about their tech stack, you can ask about the problem that started everything — and watch what happens to the room when you do.
+
+None of these are revolutionary. They are all the same move in different clothes: making the invisible visible, forcing the reasoning out into the open, staying one step ahead of the output instead of waiting for it to arrive.
+
+Ekalavya did not watch Drona teach. He reconstructed the teaching. These prompts are how I do the same thing.

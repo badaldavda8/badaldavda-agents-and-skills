@@ -36,7 +36,7 @@ I have been thinking about that clay statue for a while now. I think I finally u
 
 ---
 
-## The Notebook I Hated and Then Couldn't Live Without
+## The Notebook I Hated and Then Grew Fond of
 
 I was never a consistent 8 GPA or 9 GPA student. Occasionally I was. I choose to remember those occasions more than the others. But curious — always. Always asking questions. Always writing them down.
 
@@ -148,11 +148,11 @@ Pick up a pen. Build the statue. Don't let AI construct on sand while you stand 
 
 ---
 
-*To Shivani and Anbazhagan — you told me the last one was good but too long. You were right. This one is shorter because of that.*
+*To Shivani, Pranit, Preet and Anbazhagan — you told me the last one was good but too long. You were right. This one is shorter because of that. Again my better half — Deepa Banerjee, thanks to her for giving me a smile after reading it like every time that gives me confidence to just post it without thinking further.*
 
 ---
 
-*If you want to see how I have been thinking about and writing these essays — and use the same process for your own story — I have published the Claude skill I used to write this one on [GitHub](https://github.com/badaldavda8/claude-skills/blob/main/storyteller.md).*
+*If you want to see how I have been thinking about and writing these essays — and use the same process for your own story — I published the Claude skill I used to write this one on [GitHub](https://github.com/badaldavda8/badaldavda-agents-and-skills).*
 
 *Someday I will also write about how I learned to build these skills, and how a very old note-taking habit turned out to be the most useful thing I brought into the age of AI. That story is still being written.*
 
@@ -181,11 +181,11 @@ So I went looking.
 
 What I found was a body of research that had named everything I had been experiencing — just in vocabulary I did not have yet.
 
-The AI agreeing with my wrong assumptions has a name: *context anchoring*. Research from Microsoft and Salesforce found that spreading wrong information across a multi-turn conversation caused an average 39% performance drop in outputs. The model anchors to what was said early and cannot fully recover even when corrected later.
+The AI agreeing with my wrong assumptions has a name: *context anchoring*. Research has found that spreading wrong information across a multi-turn conversation caused an average 39% performance drop in outputs (arxiv.org/pdf/2505.06120). The model anchors to what was said early and cannot fully recover even when corrected later.
 
 The deeper yes-man problem has a name too: *AI sycophancy*. Large language models are structurally designed to produce contextually agreeable responses. They are not neutral. They are optimised to make you feel heard. That is the feature that becomes the bug.
 
-And then there is the part that should be on a warning label. A University of Pennsylvania study found that students using ChatGPT solved 48% more practice problems — but scored 17% *lower* on tests of actual conceptual understanding. Doing more. Understanding less. Researcher Ethan Mollick calls this the *jagged frontier problem*: users cannot locate where AI competence ends, so they defer to it everywhere — including where it is confidently wrong.
+And then there is the part that should be on a warning label. A University of Pennsylvania study (SSRN, 2024) found that students using ChatGPT solved 48% more practice problems — but scored 17% *lower* on tests of actual conceptual understanding. Doing more. Understanding less. Researcher Ethan Mollick calls this the *jagged frontier problem*: users cannot locate where AI competence ends, so they defer to it everywhere — including where it is confidently wrong.
 
 I was not being sentimental about notebooks. I was accidentally applying active recall to a problem that researchers had documented but not yet prescribed a practical solution for.
 
@@ -208,6 +208,12 @@ Not "explain this concept simply." That gets you a textbook summary. This gets y
 > *"Explain how distributed consensus works as if it's a story about a group of strangers trying to agree on where to eat dinner, in a world where none of them can hear each other clearly."*
 
 The made-up world forces the model to find the actual shape of the idea rather than reciting the definition. And it forces me to follow a narrative rather than scan a list. If the story breaks down — if the metaphor stops holding — that is where my understanding has a gap. That is where I ask another question.
+
+Or if I am in for a ride:
+
+> *"Explain how Vector Embeddings works as if it's a story with \<xyz\> genre. Don't tell me about the concept first. Map the concept later."*
+
+Replace `<xyz>` with mystery, crime, horror, etc.
 
 ---
 
@@ -255,7 +261,9 @@ If there is a real founding story — a named founder, a documented origin, a kn
 
 This does something a company overview cannot: it tells you what the business is actually *for*. When you know why something was built, you understand its architecture — technical and organisational — in a way that no product page explains. You walk into the room knowing what they are proud of, what they are still trying to prove, and what keeps the founders awake.
 
-It also makes the conversation different. Instead of asking about their tech stack, you can ask about the problem that started everything — and watch what happens to the room when you do.
+It also makes the conversation different. Instead of asking about their tech stack, you can ask about the problem that started everything — and watch what happens to the room when you do. It makes you part of their story and their team, and motivates you to do the best for the customer.
+
+---
 
 None of these are revolutionary. They are all the same move in different clothes: making the invisible visible, forcing the reasoning out into the open, staying one step ahead of the output instead of waiting for it to arrive.
 
